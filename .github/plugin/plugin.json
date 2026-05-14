@@ -1,7 +1,7 @@
 {
   "name": "ai-ready",
   "description": "Analyze any repository and generate AI-ready configuration — AGENTS.md, copilot-instructions.md, skills, CI workflows, issue templates, and more. Makes repos easier to contribute to and easier to maintain.",
-  "version": "0.3.0-alpha",
+  "version": "0.4.0-alpha",
   "author": {
     "name": "John Papa"
   },
@@ -18,7 +18,9 @@
     "contributions",
     "maintainer"
   ],
+  "hooks": "./hooks/hooks.json",
   "skills": [
-    "./skills/ai-ready"
+    "./skills/ai-ready",
+    "./skills/daily-tip"
   ]
 }

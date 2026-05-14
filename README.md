@@ -30,7 +30,7 @@ make this repo ai-ready
 
 The skill analyzes your code, CI, tests, docs, and structure, then generates assets customized to your project — not generic templates.
 
-> 💡 **Also available as a plugin** — if you prefer one-command install: `copilot plugin install johnpapa/ai-ready`
+> 💡 **Also available as a plugin** — if you prefer one-command install: `copilot plugin install johnpapa/ai-ready`. Plugin users also get a **daily AI-ready tip** shown automatically when Copilot starts.
 
 ### Install for a single repo
 

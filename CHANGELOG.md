@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- **Daily tip hook** — shows a rotating AI-ready tip every time a new Copilot CLI session starts, via a `sessionStart` prompt hook
+- **Daily tip skill** (`skills/daily-tip/SKILL.md`) — 20 curated tips about making repos AI-ready, one per day based on day-of-year rotation
+- **Hooks support** (`hooks/hooks.json`) — plugin now declares a `sessionStart` hook in `plugin.json`
+
+### Added
+
 - **Course repo detection** (Step 1a-ii) — multi-signal detection (numbered folders + README language + topics + lesson structure + no root manifest) to identify course/tutorial repos and adapt generation accordingly
 - **Notebook awareness** (Step 1a) — detects `.ipynb` files and generates notebook conventions (clear outputs, pin kernel, focused cells)
 - **Multi-language support** (Step 3) — repos with no dominant language get per-language convention sections instead of one blended block

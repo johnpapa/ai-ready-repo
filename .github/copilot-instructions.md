@@ -46,4 +46,5 @@ This is a **Copilot CLI plugin** containing only markdown, YAML, and JSON files.
 | `docs/how-it-works.md` | Verify consistency with `SKILL.md` steps and `README.md` |
 | `README.md` problem statement or architecture | Verify consistency with `docs/how-it-works.md` |
 | Repo structure changes (new dirs, moved files) | `AGENTS.md` (structure section), `plugin.json` (skill paths), `CHANGELOG.md` |
+| `hooks/hooks.json` | `plugin.json` (hooks path), `AGENTS.md` (structure section), `CHANGELOG.md` |
 | Any version bump | `plugin.json` (version), `CHANGELOG.md` (new entry) |

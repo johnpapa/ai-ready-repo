@@ -15,8 +15,11 @@ ai-ready/
 │   ├── ISSUE_TEMPLATE/             # Bug reports, feature requests, new skill ideas
 │   ├── PULL_REQUEST_TEMPLATE.md    # PR checklist (integrity checks, test evidence)
 │   └── CODEOWNERS                  # @johnpapa owns all paths
+├── hooks/
+│   └── hooks.json                  # sessionStart hook — shows daily tip on launch
 ├── skills/
-│   └── ai-ready/SKILL.md      # The 12-step skill procedure
+│   ├── ai-ready/SKILL.md           # The 12-step skill procedure
+│   └── daily-tip/SKILL.md          # Daily AI-ready tip shown on session start
 ├── docs/
 │   └── how-it-works.md             # Detailed explanation of the 3 mechanisms + 9 assets
 ├── AGENTS.md                       # This file

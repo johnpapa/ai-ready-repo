@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "prompt",
+        "prompt": "Use the /daily-tip skill to show me today's AI-ready tip. Just show the tip, nothing else."
+      }
+    ]
+  }
+}
