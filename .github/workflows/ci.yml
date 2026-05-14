@@ -11,26 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Validate plugin.json
-        run: python3 -c "import json; json.load(open('.github/plugin/plugin.json'))"
-
-      - name: Validate skill paths exist
-        run: |
-          python3 -c "
-          import json, os, sys
-          manifest = json.load(open('.github/plugin/plugin.json'))
-          errors = []
-          for skill_path in manifest.get('skills', []):
-              skill_dir = skill_path.lstrip('./')
-              skill_file = os.path.join(skill_dir, 'SKILL.md')
-              if not os.path.isfile(skill_file):
-                  errors.append(f'Missing: {skill_file}')
-          if errors:
-              print('\n'.join(errors))
-              sys.exit(1)
-          print('All skill paths valid')
-          "
-
       - name: Validate SKILL.md frontmatter
         run: |
           python3 -c "

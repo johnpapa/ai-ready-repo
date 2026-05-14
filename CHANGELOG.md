@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 - **Daily tip hook** — removed `sessionStart` prompt hook and `hooks/hooks.json`
 - **Daily tip skill** — removed `skills/daily-tip/SKILL.md`
+- **Plugin wrapper** — removed `.github/plugin/plugin.json`; ai-ready is now a standalone skill, not a plugin
+
+### Changed
+
+- **Install instructions** — primary install method is now `/skill install johnpapa/ai-ready` inside Copilot CLI
+- **All references to "plugin"** updated to "skill" across README, AGENTS.md, copilot-instructions.md, CI, issue templates, PR template, SECURITY.md, and docs
 
 ### Added
 

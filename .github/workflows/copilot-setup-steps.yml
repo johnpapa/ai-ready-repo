@@ -16,4 +16,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       # No runtime, dependencies, or build steps required.
-      # This is a markdown-only plugin — checkout is the only setup needed.
+      # This is a markdown-only skill — checkout is the only setup needed.

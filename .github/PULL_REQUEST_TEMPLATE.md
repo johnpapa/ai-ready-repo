@@ -13,13 +13,13 @@
 <!-- How can a reviewer verify this works? For skill changes, include the command to invoke it. -->
 
 ```bash
-copilot --plugin-dir /path/to/ai-ready
-# Then: "make this repo ai-ready"
+# Copy skill to personal skills directory and test
+cp skills/ai-ready/SKILL.md ~/.copilot/skills/ai-ready/SKILL.md
+# Then start copilot and say: "make this repo ai-ready"
 ```
 
 ## Checklist
 
-- [ ] `plugin.json` skill paths are valid (every `skills[]` entry has a `SKILL.md`)
 - [ ] SKILL.md frontmatter includes `name` and `description`
 - [ ] All YAML files are valid syntax
 - [ ] Tested the skill on at least one repo (specify which below)

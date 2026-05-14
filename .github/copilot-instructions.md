@@ -2,7 +2,7 @@
 
 ## Project Type
 
-This is a **Copilot CLI plugin** containing only markdown, YAML, and JSON files. There is no source code, no build system, no test framework, and no runtime dependencies.
+This is a **Copilot CLI skill** containing only markdown, YAML, and JSON files. There is no source code, no build system, no test framework, and no runtime dependencies.
 
 **Do not** generate or suggest build commands, test commands, package installs, or runtime setup for this repo.
 
@@ -22,11 +22,9 @@ This is a **Copilot CLI plugin** containing only markdown, YAML, and JSON files.
 - Quote strings that contain special YAML characters
 - Always include `name` and `description` in skill frontmatter
 
-### JSON (plugin.json)
+### JSON
 
 - Use 2-space indentation
-- Keep `plugin.json` fields in this order: name, description, version, author, repository, license, keywords, skills
-- Bump `version` on every meaningful change
 
 ## Skill Writing Conventions
 
@@ -41,9 +39,7 @@ This is a **Copilot CLI plugin** containing only markdown, YAML, and JSON files.
 | When this changes... | Also update... |
 |---|---|
 | `skills/ai-ready/SKILL.md` | `README.md` (if skill behavior changed), `docs/how-it-works.md`, `AGENTS.md`, `CHANGELOG.md` |
-| New skill added to `skills/` | `.github/plugin/plugin.json` (register in `skills` array), `README.md`, `AGENTS.md` (structure section), `CHANGELOG.md` |
-| `.github/plugin/plugin.json` metadata | `README.md` (version, description), `AGENTS.md`, `CHANGELOG.md` |
+| New skill added to `skills/` | `README.md`, `AGENTS.md` (structure section), `CHANGELOG.md` |
 | `docs/how-it-works.md` | Verify consistency with `SKILL.md` steps and `README.md` |
 | `README.md` problem statement or architecture | Verify consistency with `docs/how-it-works.md` |
-| Repo structure changes (new dirs, moved files) | `AGENTS.md` (structure section), `plugin.json` (skill paths), `CHANGELOG.md` |
-| Any version bump | `plugin.json` (version), `CHANGELOG.md` (new entry) |
+| Repo structure changes (new dirs, moved files) | `AGENTS.md` (structure section), `CHANGELOG.md` |

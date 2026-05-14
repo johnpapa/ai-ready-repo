@@ -8,24 +8,10 @@ A Copilot CLI skill that analyzes your repository and generates the configuratio
 
 ## Quick Start
 
-Install as a plugin (easiest):
+Install the skill from inside Copilot CLI:
 
 ```
-copilot plugin install johnpapa/ai-ready
-```
-
-Or install the skill manually:
-
-```bash
-mkdir -p ~/.copilot/skills/ai-ready
-curl -fsSL https://raw.githubusercontent.com/johnpapa/ai-ready/main/skills/ai-ready/SKILL.md \
-  -o ~/.copilot/skills/ai-ready/SKILL.md
-```
-
-Run it:
-
-```bash
-copilot
+/skill install johnpapa/ai-ready
 ```
 
 Then type:
@@ -35,6 +21,16 @@ make this repo ai-ready
 ```
 
 The skill analyzes your code, CI, tests, docs, and structure, then generates assets customized to your project — not generic templates.
+
+### Install manually
+
+If you prefer to install without the prompt:
+
+```bash
+mkdir -p ~/.copilot/skills/ai-ready
+curl -fsSL https://raw.githubusercontent.com/johnpapa/ai-ready/main/skills/ai-ready/SKILL.md \
+  -o ~/.copilot/skills/ai-ready/SKILL.md
+```
 
 ### Install for a single repo
 
@@ -52,11 +48,10 @@ The skill is safe to re-run. On the first run, it creates missing assets. On sub
 
 ### Keeping updated
 
-Re-run the `curl` command to pull the latest version:
+Re-run the install command to pull the latest version:
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/johnpapa/ai-ready/main/skills/ai-ready/SKILL.md \
-  -o ~/.copilot/skills/ai-ready/SKILL.md
+```
+/skill install johnpapa/ai-ready
 ```
 
 ### Skip what you don't need
@@ -188,7 +183,7 @@ To enable Copilot code review: go to your repo's **Settings → Copilot → Code
 
 1. Fork this repo and create a branch
 2. Make your changes (skills or docs)
-3. Test locally: `copilot --plugin-dir /path/to/your/fork` then say *"make this repo ai-ready"*
+3. Test locally: copy `skills/ai-ready/SKILL.md` to `~/.copilot/skills/ai-ready/SKILL.md`, start `copilot`, then say *"make this repo ai-ready"*
 5. Open a PR
 
 See [AGENTS.md](AGENTS.md) for the full contributor guide.

@@ -1,6 +1,6 @@
 # How It Works
 
-The AI-Ready Repo plugin prepares your repository for effective collaboration with GitHub Copilot by generating a set of structured assets. These assets work together through three complementary mechanisms — each serving a different purpose, read at a different time, and targeting a different aspect of how AI understands your project.
+The AI-Ready skill prepares your repository for effective collaboration with GitHub Copilot by generating a set of structured assets. These assets work together through three complementary mechanisms — each serving a different purpose, read at a different time, and targeting a different aspect of how AI understands your project.
 
 ---
 
@@ -83,7 +83,7 @@ Together, they form a layered system:
 
 ## The 12 Steps
 
-The plugin performs up to 12 steps, each serving a specific purpose:
+The skill performs up to 12 steps, each serving a specific purpose:
 
 ### 0. GitHub Auto-Discovery
 
@@ -111,7 +111,7 @@ MCP server configuration connecting AI agents to your project's databases, APIs,
 
 ### 5. CI Workflow (.github/workflows/ci.yml)
 
-A GitHub Actions workflow for continuous integration. Runs your test suite and linters on pull requests and pushes. If your repo already has CI, the plugin respects the existing configuration and may suggest improvements rather than replacing it.
+A GitHub Actions workflow for continuous integration. Runs your test suite and linters on pull requests and pushes. If your repo already has CI, the skill respects the existing configuration and may suggest improvements rather than replacing it.
 
 ### 6. Issue Templates (.github/ISSUE_TEMPLATE/)
 
@@ -127,11 +127,11 @@ A cross-reference table embedded in `copilot-instructions.md` that maps "when X 
 
 ### 9. Changelog Evaluation
 
-The plugin checks whether the repo has a changelog and whether it's healthy. It handles non-standard locations — some projects maintain changelogs in their docs site rather than a root `CHANGELOG.md`. The plugin follows pointer files, checks freshness against git tags, and flags stale changelogs. If no changelog exists, it creates one in Keep a Changelog format.
+The skill checks whether the repo has a changelog and whether it's healthy. It handles non-standard locations — some projects maintain changelogs in their docs site rather than a root `CHANGELOG.md`. The skill follows pointer files, checks freshness against git tags, and flags stale changelogs. If no changelog exists, it creates one in Keep a Changelog format.
 
 ### 10. Documentation Evaluation
 
-The plugin checks whether the repo has documentation, identifies the framework (Docsify, Docusaurus, MkDocs, VitePress, etc.), verifies the docs deploy pipeline, and checks that the README links to the docs. If docs exist, their location and conventions are documented in AGENTS.md and the maintenance matrix. If docs don't exist, the plugin assesses whether they're needed based on the project type.
+The skill checks whether the repo has documentation, identifies the framework (Docsify, Docusaurus, MkDocs, VitePress, etc.), verifies the docs deploy pipeline, and checks that the README links to the docs. If docs exist, their location and conventions are documented in AGENTS.md and the maintenance matrix. If docs don't exist, the skill assesses whether they're needed based on the project type.
 
 ### 11. AI-Readiness Report
 
@@ -141,7 +141,7 @@ Displays the final readiness report — current score, category breakdown (AI Co
 
 ## How the Analysis Works
 
-Before generating any assets, the plugin performs a comprehensive analysis of your repository. This is what makes the output customized rather than generic.
+Before generating any assets, the skill performs a comprehensive analysis of your repository. This is what makes the output customized rather than generic.
 
 The skill instructs Copilot to scan your repository for:
 
@@ -219,7 +219,7 @@ This is the key difference from template-based approaches: every generated asset
 
 ## The Maintenance Matrix
 
-The maintenance matrix is one of the most impactful assets the plugin generates. It solves a common problem: when one part of the codebase changes, other parts need to be updated to stay in sync — but it's easy to forget which parts.
+The maintenance matrix is one of the most impactful assets the skill generates. It solves a common problem: when one part of the codebase changes, other parts need to be updated to stay in sync — but it's easy to forget which parts.
 
 ### The Problem
 

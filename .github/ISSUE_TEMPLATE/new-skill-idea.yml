@@ -1,10 +1,10 @@
 name: New Skill Idea
-description: Propose a new skill for the plugin to support
+description: Propose a new skill for the project to support
 labels: ["skill-idea"]
 body:
   - type: markdown
     attributes:
-      value: Suggest a new skill that the plugin should be able to generate or invoke.
+      value: Suggest a new skill that the project should be able to generate or invoke.
   - type: input
     id: skill-name
     attributes:

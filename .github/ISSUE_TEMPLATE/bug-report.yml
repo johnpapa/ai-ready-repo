@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report a problem with the plugin
+description: Report a problem with the skill
 labels: ["bug"]
 body:
   - type: markdown
@@ -9,7 +9,7 @@ body:
     id: description
     attributes:
       label: What happened?
-      description: Describe what went wrong when using the plugin.
+      description: Describe what went wrong when using the skill.
       placeholder: "When I ran 'make this repo ai-ready' on my Python project, it..."
     validations:
       required: true
@@ -24,7 +24,7 @@ body:
     id: repo-type
     attributes:
       label: Target repo type
-      description: What kind of repo were you running the plugin on?
+      description: What kind of repo were you running the skill on?
       placeholder: "e.g., Node.js + React, Python + Django, Go microservice"
     validations:
       required: true

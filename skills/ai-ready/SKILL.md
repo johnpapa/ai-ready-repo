@@ -300,7 +300,7 @@ Before proceeding, produce a structured summary combining GitHub context (Step 0
 | Category | Finding | Evidence (source) |
 |----------|---------|-------------------|
 | Repo | e.g., johnpapa/ai-ready | `git remote -v` |
-| Description | e.g., "Copilot CLI plugin..." | GitHub API / repo metadata |
+| Description | e.g., "Copilot CLI skill..." | GitHub API / repo metadata |
 | Topics | e.g., copilot, skills, ai-ready | GitHub API |
 | Language | e.g., TypeScript (65%), Rust (30%) | GitHub API language breakdown |
 | Multi-language | yes/no — if no single language exceeds 50%, flag as multi-language | GitHub API |
@@ -833,7 +833,7 @@ Check if the README already contains an `AI--Ready` badge. If it does not, **aut
 [![AI Ready](https://img.shields.io/badge/AI--Ready-yes-brightgreen?style=flat)](https://github.com/johnpapa/ai-ready)
 ```
 
-The badge is a static Shields.io image with zero dependencies. It links back to the ai-ready plugin repo so others can discover it. Include this in the "What I Did" section of the report as a `➕ Create` action.
+The badge is a static Shields.io image with zero dependencies. It links back to the ai-ready repo so others can discover it. Include this in the "What I Did" section of the report as a `➕ Create` action.
 
 ### 11b. Offer to create the PR
 
