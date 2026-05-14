@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- **Install instructions** — primary install method is now `/skill add johnpapa/ai-ready` inside Copilot CLI
+- **Install instructions** — primary install method is now `gh skill install johnpapa/ai-ready` via GitHub CLI
 - **All references to "plugin"** updated to "skill" across README, AGENTS.md, copilot-instructions.md, CI, issue templates, PR template, SECURITY.md, and docs
 
 ### Added
