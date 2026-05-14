@@ -8,13 +8,13 @@ A Copilot CLI skill that analyzes your repository and generates the configuratio
 
 ## Quick Start
 
-Install the skill using the GitHub CLI:
+Install the skill from inside Copilot CLI:
 
-```bash
-gh skill install johnpapa/ai-ready
+```
+/skills add johnpapa/ai-ready
 ```
 
-Then open Copilot CLI and type:
+Then type:
 
 ```
 make this repo ai-ready
@@ -28,10 +28,10 @@ The skill is safe to re-run. On the first run, it creates missing assets. On sub
 
 ### Keeping updated
 
-Re-run the install command to pull the latest version:
+Re-run the command to pull the latest version:
 
-```bash
-gh skill update ai-ready
+```
+/skills add johnpapa/ai-ready
 ```
 
 ### Skip what you don't need
