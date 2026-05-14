@@ -14,6 +14,6 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       # No runtime, dependencies, or build steps required.
       # This is a markdown-only skill — checkout is the only setup needed.
