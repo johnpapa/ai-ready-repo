@@ -1,69 +1,64 @@
 ---
 name: daily-tip
-description: Show a daily tip about making repositories AI-ready. USE THIS SKILL when the user asks for a "daily tip", "tip of the day", "show me a tip", "ai-ready tip", or when triggered by a sessionStart hook. Picks one tip per day based on the current date so users see a fresh tip each day.
+description: Show a daily Copilot tip. USE THIS SKILL when the user asks for a "daily tip", "tip of the day", "show me a tip", "copilot tip", or when triggered by a sessionStart hook. Shows a fresh tip each day — first checks for a /chronicle-generated tip, then falls back to the built-in list.
 ---
 
 # Daily Tip
 
-When invoked, display **one** tip from the list below. Pick the tip using today's date so that users see a different tip each day but the same tip if they ask again on the same day.
+When invoked, display **one** tip. A fresh tip is generated each day via `/chronicle` and cached locally. If no cached tip is available, fall back to the built-in list below.
 
 ## How to pick the tip
 
-1. Get today's day-of-year (1–365).
-2. Use `(day_of_year % total_tips)` to select the tip index.
+1. Check if `~/.copilot/tip-of-the-day.txt` exists and `~/.copilot/tip-of-the-day-date.txt` contains today's date (`YYYY-MM-DD`). If both are true, display the cached tip.
+2. Otherwise, fall back to the built-in list: get today's day-of-year (1–365) and use `(day_of_year % total_tips)` to select the tip index.
 3. Display the selected tip using the format below.
 
 ## Display format
 
 ```
-💡 Daily AI-Ready Tip (#N of TOTAL)
+💡 Daily Copilot Tip
 
 TIP_TEXT
-
----
-Type "make this repo ai-ready" to get started.
 ```
-
-Replace `#N` with the 1-based tip number and `TOTAL` with the total number of tips.
 
 ## Tips
 
-1. **Add `AGENTS.md` to your repo root** — This is the single most impactful file for AI agents. It tells them your tech stack, build commands, test commands, and repo structure so they don't have to guess.
+1. **Use `@` to mention files in your prompt** — Type `@` followed by a relative path to include a file's contents as context. Copilot reads it so you don't have to paste code into your prompt.
 
-2. **Put build and test commands in `AGENTS.md`** — AI agents can't contribute if they can't verify their work. Include exact commands like `npm test` or `cargo build` so agents can run them without asking.
+2. **Use plan mode before coding** — Press `Shift+Tab` to enter plan mode. Copilot will outline an approach before writing code, so you can steer the direction early.
 
-3. **Add `.github/copilot-instructions.md`** — This file teaches Copilot your coding conventions: naming patterns, error handling style, preferred libraries. Without it, Copilot generates generic code that doesn't match your project.
+3. **Use `/compact` to free up context** — Running low on context window? The `/compact` command summarizes your conversation history so you can keep working without starting over.
 
-4. **Mine your PR reviews for repeated feedback** — If you keep leaving the same review comments ("add tests", "update the changelog", "use our error wrapper"), turn those into conventions in `copilot-instructions.md`. That's the whole point — stop repeating yourself.
+4. **Mention issues and PRs with `#`** — Type `#` followed by a number to pull in issue or PR context. Copilot reads the title, body, and comments so it understands what you're working on.
 
-5. **Create a maintenance matrix** — Document which files must be updated together. When `schema.prisma` changes, do migrations need updating? When `routes.ts` changes, do tests need updating? AI agents follow these rules — humans forget them.
+5. **Run shell commands with `!`** — Prefix any command with `!` to run it directly without a model call. Great for quick `git status`, `ls`, or `npm test` checks mid-conversation.
 
-6. **Add issue templates** — Bug reports and feature requests with structured fields give AI agents enough context to start working immediately. A blank issue is a blank canvas — and AI agents paint poorly on blank canvases.
+6. **Use `/diff` to review your changes** — Before committing, run `/diff` to see everything Copilot changed. It's a quick sanity check that catches surprises.
 
-7. **Add a PR template with a checklist** — A PR template that lists "did you add tests?", "did you update docs?", "did you run lint?" catches mistakes before review. AI agents follow checklists literally — which is exactly what you want.
+7. **Add custom instructions in `.github/copilot-instructions.md`** — Teach Copilot your project's conventions once and every prompt benefits. Naming patterns, error handling, preferred libraries — write it down so Copilot stops guessing.
 
-8. **Set up CI that runs on PRs** — If there's no CI, there's no automated safety net. AI agents generate code faster than humans, but without CI, bad code lands faster too. Even a basic lint + test workflow helps.
+8. **Use `/ask` for side questions** — Need a quick answer without polluting your conversation history? `/ask` lets you ask a one-off question that doesn't add to the context window.
 
-9. **Don't skip `dependabot.yml`** — Automated dependency updates keep your repo secure and reduce maintenance burden. It's one YAML file that saves hours of manual version bumping.
+9. **Delegate to the cloud with `/delegate`** — Hand off your current session to GitHub's Copilot coding agent. It creates a PR from your conversation, so you can move on to other work.
 
-10. **Use path-specific instructions for monorepos** — If your repo has multiple packages or apps, use `.github/instructions/**/*.instructions.md` with `applyTo` glob patterns so Copilot gets the right conventions for each area.
+10. **Create skills for repeatable workflows** — If you find yourself giving Copilot the same multi-step instructions repeatedly, turn them into a skill in `~/.copilot/skills/` or `.github/skills/`. Invoke with `/skill-name`.
 
-11. **Keep your `AGENTS.md` current** — A stale `AGENTS.md` is worse than none. If your build command changed from `npm run build` to `turbo build`, agents will fail silently with the old command. Re-run the ai-ready skill periodically to catch drift.
+11. **Use `/resume` to pick up where you left off** — Closed a session by accident? `/resume` lets you select and continue a previous session with all its context intact.
 
-12. **Add a `copilot-setup-steps.yml` for cloud agents** — GitHub's Copilot coding agent runs in a container. Without setup steps, it can't install dependencies or run your build. This file is the cloud agent's bootstrap script.
+12. **Add `AGENTS.md` to your repo** — This file tells Copilot your tech stack, build commands, test commands, and repo structure. Without it, Copilot has to guess — and it guesses wrong more than you'd like.
 
-13. **Write conventions, not rules** — Instead of "always use semicolons", write "we use semicolons because our linter enforces them via `@company/eslint-config`". The _why_ helps AI agents make good judgment calls in edge cases.
+13. **Press `Ctrl+T` to toggle reasoning** — See how Copilot thinks through your problem. Useful for understanding why it chose a particular approach, or for debugging when it goes sideways.
 
-14. **Score your repo** — Run `how ai-ready is this repo?` to get a readiness report without changing any files. It shows you exactly what's missing and what it would take to reach 🏆 AI-Ready status.
+14. **Use autopilot mode for multi-step tasks** — Press `Shift+Tab` to cycle to autopilot mode. Copilot will keep working through a task without stopping to ask at every step.
 
-15. **Existing config counts** — Already have `AGENTS.md` or `copilot-instructions.md`? The ai-ready skill won't overwrite them. It audits what you have against your current codebase and suggests improvements where things have drifted.
+15. **Try `/research` for deep investigations** — Need to understand a complex topic across repos and the web? `/research` runs a thorough search and produces a detailed report with citations.
 
-16. **Community workflows aren't CI** — If your repo only has `welcome.yml` and `stale.yml`, that's community automation, not build CI. The ai-ready skill recognizes the difference and won't give you false credit for CI coverage.
+16. **Connect MCP servers for external tools** — Run `/mcp add` to connect Copilot to databases, APIs, and services. The GitHub MCP server is built in, but you can add your own.
 
-17. **Every file should earn its place** — Don't generate boilerplate for the sake of completeness. A `CONTRIBUTING.md` that says "please follow our conventions" without listing them is noise. The ai-ready skill generates files with real, repo-specific content.
+17. **Use `Ctrl+S` to preserve your input** — Submit a command but keep the prompt text in the input box. Handy when you're iterating on a prompt and want to tweak and resubmit.
 
-18. **Use the self-consistency rule** — Generated files should follow the same conventions they define. If your `copilot-instructions.md` says "use single quotes", the generated code should use single quotes. Copilot code review will catch violations.
+18. **Scope instructions with `applyTo` globs** — For monorepos, create `.github/instructions/**/*.instructions.md` files with `applyTo` patterns so Copilot gets the right conventions for each package or app.
 
-19. **Re-run after major changes** — Added a new package? Switched from Jest to Vitest? Migrated to a monorepo? Re-run the ai-ready skill to update your AI config. Drift is the enemy of good AI contributions.
+19. **Use `/review` for AI code review** — Get a focused code review of your staged or unstaged changes. It only flags genuine issues — bugs, security problems, logic errors — not style nits.
 
-20. **Start with a report, then generate** — Not sure if you need this? Run `score this repo` first. If you're already at 🥇 Solid, maybe you just need to fill a gap or two. If you're at 🥉 Getting Started, the full skill run will transform your repo.
+20. **Undo mistakes with `/undo`** — Made a wrong turn? `/undo` rewinds the last step and reverts file changes. No need to manually fix what Copilot broke.
