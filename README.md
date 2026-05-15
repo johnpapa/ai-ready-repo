@@ -157,6 +157,10 @@ Together: PRs are validated for **correctness** (CI) and reviewed for **quality*
 
 To enable Copilot code review: go to your repo's **Settings → Copilot → Code review** and turn it on. Once enabled, every PR is automatically reviewed against the conventions in `copilot-instructions.md`.
 
+## Tested Against
+
+This skill has been validated against a diverse set of repos — courses, applications, VS Code extensions, monorepos, and more. See [skills/ai-ready/references/training-repos.md](skills/ai-ready/references/training-repos.md) for the full list.
+
 ## Contributing
 
 ### Quick Start

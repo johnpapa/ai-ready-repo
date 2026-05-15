@@ -39,6 +39,7 @@ This is a **Copilot CLI skill** containing only markdown, YAML, and JSON files. 
 | When this changes... | Also update... |
 |---|---|
 | `skills/ai-ready/SKILL.md` | `README.md` (if skill behavior changed), `docs/how-it-works.md`, `AGENTS.md`, `CHANGELOG.md` |
+| `skills/ai-ready/references/*` | Verify consistency with `SKILL.md` steps that reference them |
 | New skill added to `skills/` | `README.md`, `AGENTS.md` (structure section), `CHANGELOG.md` |
 | `docs/how-it-works.md` | Verify consistency with `SKILL.md` steps and `README.md` |
 | `README.md` problem statement or architecture | Verify consistency with `docs/how-it-works.md` |

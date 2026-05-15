@@ -15,7 +15,13 @@ ai-ready/
 │   ├── PULL_REQUEST_TEMPLATE.md    # PR checklist (integrity checks, test evidence)
 │   └── CODEOWNERS                  # @johnpapa owns all paths
 ├── skills/
-│   └── ai-ready/SKILL.md           # The 12-step skill procedure
+│   └── ai-ready/
+│       ├── SKILL.md                   # The 12-step skill procedure (<500 lines)
+│       └── references/               # Detailed reference material (loaded on demand)
+│           ├── github-discovery.md   # GitHub API tables, PR mining, health gaps
+│           ├── detection-tables.md   # Manifest detection, course/monorepo heuristics
+│           ├── report-template.md    # Report format, HTML spec, badge, PR flow
+│           └── training-repos.md     # Repos used to validate skill heuristics
 ├── docs/
 │   └── how-it-works.md             # Detailed explanation of the 3 mechanisms + 9 assets
 ├── AGENTS.md                       # This file
