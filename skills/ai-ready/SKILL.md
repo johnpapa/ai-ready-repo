@@ -1,6 +1,6 @@
 ---
 name: ai-ready
-description: Analyze any repository and generate AI-ready configuration — AGENTS.md, copilot-instructions.md, skills, CI workflows, issue templates, and more. USE THIS SKILL when the user asks to "make this repo ai-ready", "set up AI config", "add copilot instructions", "prepare this repo for AI contributions", or similar. This skill analyzes the repo's code, tests, CI, and structure, then generates customized assets that teach AI agents and human contributors how to work in the repo correctly.
+description: "**ANALYSIS SKILL** — Analyze any repository and generate AI-ready configuration — AGENTS.md, copilot-instructions.md, skills, CI workflows, issue templates. WHEN: \"make this repo ai-ready\", \"set up AI config\", \"add copilot instructions\", \"prepare this repo for AI contributions\", \"generate AGENTS.md\". INVOKES: glob, grep, view, create, edit for repo analysis and file generation. FOR SINGLE OPERATIONS: use create/edit directly for individual config files."
 ---
 
 # AI-Ready Repo Skill
