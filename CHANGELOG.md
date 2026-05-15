@@ -19,6 +19,13 @@ All notable changes to this project will be documented in this file.
   - `training-repos.md` — validation repo list
 - "Tested Against" section in README linking to training repos
 - `references/*` entry in maintenance matrix
+- **"Do No Harm" principle** — safety rules: never create duplicates, never push to main/master without permission, never overwrite files, never delete without approval
+- **Duplicate file prevention** — Step 1d and Step 4 check ALL known locations for `copilot-setup-steps.yml` before creating
+- `Updated CHANGELOG.md` checkbox added to PR template checklist
+
+### Fixed
+
+- **Duplicate `copilot-setup-steps.yml` creation** — previous runs could create a second copy if the file existed at a legacy location
 
 ## [Unreleased]
 

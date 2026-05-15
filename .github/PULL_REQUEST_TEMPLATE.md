@@ -23,6 +23,7 @@ cp skills/ai-ready/SKILL.md ~/.copilot/skills/ai-ready/SKILL.md
 - [ ] SKILL.md frontmatter includes `name` and `description`
 - [ ] All YAML files are valid syntax
 - [ ] Tested the skill on at least one repo (specify which below)
+- [ ] Updated `CHANGELOG.md` with what changed and why
 - [ ] Updated `AGENTS.md` if repo structure changed
 - [ ] Updated `README.md` if user-facing behavior changed
 - [ ] Updated `docs/how-it-works.md` if the 3-mechanism or 9-asset model changed
