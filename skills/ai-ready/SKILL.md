@@ -102,7 +102,9 @@ Check `.github/workflows/` for PR triggers. Check for other CI systems. Recogniz
 
 ### 1d. Check existing AI configuration
 
-Check for: `AGENTS.md`, `.github/copilot-instructions.md`, `copilot-setup-steps.yml`, `.github/skills/`, `.github/agents/`, `.github/extensions/`, `.devcontainer/`.
+Check for: `AGENTS.md`, `.github/copilot-instructions.md`, `.github/skills/`, `.github/agents/`, `.github/extensions/`, `.devcontainer/`.
+
+**copilot-setup-steps.yml** — check ALL known locations: `.github/workflows/copilot-setup-steps.yml` (canonical), `.github/copilot-setup-steps.yml` (legacy), and repo root. If found in a non-canonical location, flag it for consolidation into `.github/workflows/` — do not create a duplicate.
 
 If multiple instruction files exist, check for duplicates, contradictions, stale references, and scope clarity. See [references/detection-tables.md](references/detection-tables.md) for drift detection details.
 
@@ -152,7 +154,9 @@ The maintenance matrix defines what must be updated when different parts of the 
 
 ## Step 4 — Generate copilot-setup-steps.yml
 
-If missing, create `.github/workflows/copilot-setup-steps.yml`. Steps: checkout, set up runtime, install dependencies, install test dependencies, build. Derive from existing CI when possible. For .NET multi-target, install all required SDK versions.
+Check ALL locations first: `.github/workflows/copilot-setup-steps.yml`, `.github/copilot-setup-steps.yml`, and repo root. If one exists anywhere, do NOT create another — consolidate into `.github/workflows/` if at a legacy location.
+
+If truly missing from all locations, create `.github/workflows/copilot-setup-steps.yml`. Steps: checkout, set up runtime, install dependencies, install test dependencies, build. Derive from existing CI when possible. For .NET multi-target, install all required SDK versions.
 
 ---
 
@@ -208,8 +212,18 @@ Display the report using the format in [references/report-template.md](reference
 
 ## Important Rules
 
+### Do No Harm
+
+This skill's first obligation is to leave the repo in a **better state than it found it — never worse**. Every rule below serves this principle.
+
+- **NEVER create duplicates** — before creating any file, check ALL known locations (canonical, legacy, and root). If a file exists anywhere, do not create another copy. Consolidate instead.
+- **NEVER push directly to main/master** — always create a feature branch and open a PR for review. The only exception is if the user explicitly asks to commit to the default branch.
+- **NEVER overwrite existing files** — only create missing assets. Flag drift for user review.
+- **NEVER delete files without user approval** — if consolidating duplicates or removing stale files, include the deletion in the PR for review.
+
+### General Rules
+
 - **NEVER open a pager** — append `| cat` to every `gh`/`git` command. Use `git --no-pager`.
-- **NEVER overwrite existing files** — only create missing assets.
 - **ALWAYS customize to the repo's actual stack** — never produce generic boilerplate.
 - **Self-consistency** — every generated file must follow the conventions you establish. Cross-check before finalizing.
 - **GitHub-native by default** — auto-discover via MCP tools and `gh` CLI. Fall back to local analysis.
