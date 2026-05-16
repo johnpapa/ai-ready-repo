@@ -2,8 +2,6 @@
 
 [![AI Ready](https://img.shields.io/badge/AI--Ready-yes-brightgreen?style=flat)](https://github.com/johnpapa/ai-ready)
 
-> ⚠️ **Experimental** — Under active development. It works, but expect rough edges. Feedback and contributions welcome.
-
 A Copilot CLI skill that analyzes your repository and generates the configuration files AI agents need to contribute correctly. **GitHub-native** — it auto-discovers your repo's context, community health, and PR review patterns without you explaining anything.
 
 ## Quick Start
