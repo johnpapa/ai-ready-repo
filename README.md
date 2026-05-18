@@ -6,10 +6,10 @@ A Copilot CLI skill that analyzes your repository and generates the configuratio
 
 ## Quick Start
 
-Install the skill:
+Install the skill from inside Copilot CLI:
 
-```bash
-gh skills install johnpapa/ai-ready ai-ready --scope user
+```
+copilot plugin install johnpapa/ai-ready
 ```
 
 Then inside Copilot CLI, type:
@@ -20,7 +20,6 @@ make this repo ai-ready
 
 The skill analyzes your code, CI, tests, docs, and structure, then generates assets customized to your project — not generic templates.
 
-> Requires [GitHub CLI v2.90.0+](https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/) with the `gh skills` extension.
 
 ### Run it again anytime
 
@@ -28,8 +27,10 @@ The skill is safe to re-run. On the first run, it creates missing assets. On sub
 
 ### Keeping updated
 
-```bash
-gh skills update ai-ready
+Update to the latest version:
+
+```
+copilot plugin update ai-ready
 ```
 
 ### Skip what you don't need
@@ -166,7 +167,7 @@ This skill has been validated against a diverse set of repos — courses, applic
 1. Fork this repo and create a branch
 2. Make your changes (skills or docs)
 3. Test locally: copy `skills/ai-ready/SKILL.md` to `~/.copilot/skills/ai-ready/SKILL.md`, start `copilot`, then say *"make this repo ai-ready"*
-5. Open a PR
+4. Open a PR
 
 See [AGENTS.md](AGENTS.md) for the full contributor guide.
 
