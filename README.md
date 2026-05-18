@@ -166,7 +166,7 @@ This skill has been validated against a diverse set of repos — courses, applic
 1. Fork this repo and create a branch
 2. Make your changes (skills or docs)
 3. Test locally: copy `skills/ai-ready/SKILL.md` to `~/.copilot/skills/ai-ready/SKILL.md`, start `copilot`, then say *"make this repo ai-ready"*
-5. Open a PR
+4. Open a PR
 
 See [AGENTS.md](AGENTS.md) for the full contributor guide.
 
