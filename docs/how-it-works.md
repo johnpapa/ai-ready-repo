@@ -105,9 +105,9 @@ The coding conventions file for all Copilot interactions. Includes language idio
 
 Configuration for the Copilot coding agent's environment. Defines the setup steps the agent runs before working on your repo — installing dependencies, building the project, running any required bootstrapping. This ensures the agent's environment matches what a human developer would set up.
 
-### 4b. .vscode/mcp.json
+### 4b. .mcp.json
 
-MCP server configuration connecting AI agents to your project's databases, APIs, and tools. Uses environment variable placeholders for secrets so the config is safe to commit.
+MCP server configuration connecting AI agents to your project's databases, APIs, and tools. Generated at the repo root (`.mcp.json`). Uses environment variable placeholders for secrets so the config is safe to commit.
 
 ### 5. CI Workflow (.github/workflows/ci.yml)
 

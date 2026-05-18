@@ -33,7 +33,7 @@ Assets are grouped into three categories. Count assets with **Nailed It** status
 | 1 | `AGENTS.md` | Step 2 |
 | 2 | `.github/copilot-instructions.md` | Step 3 |
 | 3 | Maintenance matrix (in `copilot-instructions.md`) | Step 8 |
-| 4 | `.vscode/mcp.json` | Step 4b |
+| 4 | `.mcp.json` | Step 4b |
 | 5 | `.github/workflows/copilot-setup-steps.yml` | Step 4 |
 
 **🔧 Dev Workflow** — what keeps PRs clean and contributors on track
@@ -160,9 +160,11 @@ If truly missing from all locations, create `.github/workflows/copilot-setup-ste
 
 ---
 
-## Step 4b — Generate .vscode/mcp.json
+## Step 4b — Generate .mcp.json
 
-If missing, generate based on detected dependencies (databases, APIs, cloud platforms, browser automation, DevOps tools). Use `${VAR}` for secrets. Only include servers the project actually needs — do not speculatively add servers.
+If missing, generate `.mcp.json` at the repo root based on detected dependencies (databases, APIs, cloud platforms, browser automation, DevOps tools). Use `${VAR}` for secrets. Only include servers the project actually needs — do not speculatively add servers.
+
+*Why?*: Copilot CLI no longer supports `.vscode/mcp.json` — the correct location is `.mcp.json` at the repo root. If `.vscode/mcp.json` exists, flag it as "Could Be Better" and suggest migrating to `.mcp.json`.
 
 ---
 

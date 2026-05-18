@@ -6,13 +6,13 @@ A Copilot CLI skill that analyzes your repository and generates the configuratio
 
 ## Quick Start
 
-Install the skill from inside Copilot CLI:
+Install the skill:
 
-```
-/skills add johnpapa/ai-ready
+```bash
+gh skills install johnpapa/ai-ready ai-ready --scope user
 ```
 
-Then type:
+Then inside Copilot CLI, type:
 
 ```
 make this repo ai-ready
@@ -20,16 +20,16 @@ make this repo ai-ready
 
 The skill analyzes your code, CI, tests, docs, and structure, then generates assets customized to your project — not generic templates.
 
+> Requires [GitHub CLI v2.90.0+](https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/) with the `gh skills` extension.
+
 ### Run it again anytime
 
 The skill is safe to re-run. On the first run, it creates missing assets. On subsequent runs, it **audits** your existing AI-ready files against the current state of your codebase — flagging drift like outdated build commands, stale repo structure, or new PR review patterns that should become conventions. It never overwrites your files — it suggests updates and lets you decide.
 
 ### Keeping updated
 
-Re-run the command to pull the latest version:
-
-```
-/skills add johnpapa/ai-ready
+```bash
+gh skills update ai-ready
 ```
 
 ### Skip what you don't need
@@ -138,7 +138,7 @@ Every file is customized to your repo's actual language, framework, and patterns
 | **`.github/ISSUE_TEMPLATE/feature-request.yml`** | Structured feature request form |
 | **`.github/PULL_REQUEST_TEMPLATE.md`** | PR description template with checklist items derived from the maintenance matrix |
 | **`CHANGELOG.md`** | Keep a Changelog format, populated from releases/tags if available |
-| **`.vscode/mcp.json`** | MCP server config connecting AI agents to your project's databases, APIs, and tools |
+| **`.mcp.json`** | MCP server config connecting AI agents to your project's databases, APIs, and tools |
 | **README `## Contributing` section** | Onramp for new contributors — how to fork, build, test, and submit a PR |
 | **AI-Ready badge in README** | Shields.io badge linking back to this skill — added automatically |
 
