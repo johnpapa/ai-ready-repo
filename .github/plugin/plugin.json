@@ -1,0 +1,21 @@
+{
+  "name": "ai-ready",
+  "description": "Analyze any repository and generate AI-ready configuration — AGENTS.md, copilot-instructions.md, skills, CI workflows, issue templates.",
+  "version": "1.0.0",
+  "author": {
+    "name": "John Papa",
+    "url": "https://github.com/johnpapa"
+  },
+  "repository": "https://github.com/johnpapa/ai-ready",
+  "license": "MIT",
+  "keywords": [
+    "ai-ready",
+    "copilot",
+    "agents",
+    "skills",
+    "configuration"
+  ],
+  "skills": [
+    "./skills/ai-ready"
+  ]
+}
