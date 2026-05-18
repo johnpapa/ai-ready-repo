@@ -9,17 +9,16 @@ A Copilot CLI skill that analyzes your repository and generates the configuratio
 Install the skill from inside Copilot CLI:
 
 ```
-copilot plugin install johnpapa/ai-ready
+copilot plugin install ai-ready@awesome-copilot
 ```
 
-Then inside Copilot CLI, type:
+Then type:
 
 ```
 make this repo ai-ready
 ```
 
 The skill analyzes your code, CI, tests, docs, and structure, then generates assets customized to your project — not generic templates.
-
 
 ### Run it again anytime
 
